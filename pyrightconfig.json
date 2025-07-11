@@ -1,0 +1,9 @@
+{
+  "typeCheckingMode": "strict",
+  "exclude": [
+    "tests",
+    "build"
+  ],
+  "reportMissingTypeStubs": true,
+  "pythonVersion": "3.10"
+}

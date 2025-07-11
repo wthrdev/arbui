@@ -1,0 +1,25 @@
+[project]
+name = "arbui"
+version = "0.1.0"
+description = "Another restic backup user interface"
+authors = [
+    {name = "With'r",email = "107897693+ZhMster@users.noreply.github.com"}
+]
+readme = "README.md"
+requires-python = ">=3.8.1,<4.0.0"
+dependencies = [
+    "textual (>=3.7.1,<4.0.0)"
+]
+
+[tool.poetry]
+
+[tool.poetry.group.dev.dependencies]
+textual-dev = "^1.7.0"
+textual = "^3.7.1"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+strict = true
