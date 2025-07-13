@@ -1,28 +1,27 @@
 from textual.app import App, ComposeResult
 from textual.widgets import Footer, Header
-from pages.welcome import WelcomePage
+from textual.containers import CenterMiddle
+from ui.pages.login import LoginPage
 
 
     
-class StopwatchApp(App): # type: ignore
-    """A Textual app to manage stopwatches."""
-
-    BINDINGS = [("d", "toggle_dark", "Toggle dark mode")]
-    # def __init__(self):
-        # self.super.__init__()
+class ThisApp(App): # type: ignore
+    CSS_PATH = "styles.css"
     def compose(self) -> ComposeResult:
-        """Create child widgets for the app."""
         yield Header()
-        yield WelcomePage()
+        with CenterMiddle():
+            yield LoginPage(classes="centered-container")
         yield Footer()
 
+
+    #------------ Theme Handling ------------#
+    BINDINGS = [("d", "toggle_dark", "Toggle dark mode")]
     def action_toggle_dark(self) -> None:
-        """An action to toggle dark mode."""
         self.theme = (
             "textual-dark" if self.theme == "textual-light" else "textual-light"
         )
 
 
 if __name__ == "__main__":
-    app = StopwatchApp()
+    app = ThisApp()
     app.run()

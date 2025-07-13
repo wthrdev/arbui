@@ -3,10 +3,11 @@ from dataclasses import dataclass
 
 @dataclass
 class ResticProfile:
-    repositoryPath: str;
-    unsafePwd: str;
+    repositoryPath: str = "";
+    unsafePwd: str = "";
 
-    backupPath: list[str];
+    backupPath: list[str] = [];
+
 
     def login(self, path: Path, pwd: str):
         pass;

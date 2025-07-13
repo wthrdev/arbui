@@ -1,15 +1,14 @@
 from textual.app import ComposeResult
-from textual.containers import VerticalScroll
+from textual.containers import CenterMiddle, HorizontalGroup, Container
 from textual.widget import Widget
-from textual.widgets import Button
+from textual.widgets import Static, Button
 
 class WelcomePage(Widget):
-    def __init__(self):
-
-        super().__init__()
-
     def compose(self) -> ComposeResult:
-        with VerticalScroll():
-            for i in range(5000):
-                yield Button(f"Hello! {i}", "primary")
-        # return super().compose()
+        with CenterMiddle():
+            #with Container( ):
+            with HorizontalGroup(classes="centered-container"):
+                yield Button("Hello! 1", variant="primary")
+                yield Button("Hello! 2", variant="success")
+            yield Button("Hello! 3", variant="success")
+            
